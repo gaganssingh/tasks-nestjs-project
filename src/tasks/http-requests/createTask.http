@@ -4,8 +4,26 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "title": "Gym workout",
-  "description": "Go to Goldys gym for a session"
+  "title": "Go hiking",
+  "description": "Hike in the forest"
+}
+
+### 🟢 Valid
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Testing",
+  "description": "buy milk from the Grocery Store"
+}
+
+### 🟢 Valid
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Clean roon",
+  "description": "Completely clean my room"
 }
 
 
