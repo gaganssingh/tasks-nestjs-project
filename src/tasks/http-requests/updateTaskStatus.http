@@ -1,0 +1,16 @@
+### PATCH => Create new task
+# 🟢 Valid
+PATCH http://localhost:3000/tasks/40741136-2bac-4081-903a-4e997925db4f/status
+Content-Type: application/json
+
+{
+  "status": "IN_PROGRESS"
+}
+
+
+### 🚫 Invalid
+PATCH http://localhost:3000/tasks/invalid-id-goes-here/status
+Content-Type: application/json
+
+{
+}

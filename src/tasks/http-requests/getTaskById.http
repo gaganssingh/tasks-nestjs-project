@@ -1,0 +1,6 @@
+### GET => Get task by id
+# 🟢 Valid🚫
+GET http://localhost:3000/tasks/20898bc9-397e-4149-889f-679eafb9e010
+
+# 🚫 Invalid
+GET http://localhost:3000/tasks/invalid-id

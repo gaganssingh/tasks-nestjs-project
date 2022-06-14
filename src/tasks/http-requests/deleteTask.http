@@ -1,0 +1,8 @@
+### DELETE => Delete task by id
+# 🟢 Valid
+DELETE http://localhost:3000/tasks/01c2451a-be0c-478e-9a3f-c236cf3e1361
+
+
+### DELETE => Delete task by id
+# 🚫 Invalid
+DELETE http://localhost:3000/tasks/invalid
