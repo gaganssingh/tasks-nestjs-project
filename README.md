@@ -158,19 +158,51 @@ A REST Api built using NestJS, TypeORM and PostgreSQL
 
 ### SETUP - Environment Variables:
 
-- Install dependencies `npm i @nestjs/config cross-env`
-- Import COnfigModule inside `app.module.ts`:
+- Install dependencies `npm i @nestjs/config cross-env @hapi/joi`, `npm i -D @types/hapi__joi`
+- Define validation schema inside `src/config.schema.ts`:
+
+  ```
+  import * as Joi from '@hapi/joi';
+
+  export const configValidationSchema = Joi.object({
+    STAGE: Joi.string().required(),
+    DB_HOST: Joi.string().required(),
+    DB_PORT: Joi.number().default(5432),
+    DB_USERNAME: Joi.string().required(),
+    DB_PASSWORD: Joi.string().required(),
+    DB_DATABASE: Joi.string().required(),
+  });
+  ```
+
+- Import ConfigModule inside `app.module.ts`:
   ```
   @Module({
     imports: [
       ConfigModule.forRoot({
         isGlobal: true,
         envFilePath: [`.env.stage.${process.env.STAGE}`],
+        validationSchema: configValidationSchema,
       }),
-      TypeOrmModule.forRoot({
       .
       .
       .
+  ```
+- Replace TypeOrmModule.forRoot with TypeOrmModule.forRootAsync inside `app.module.ts`:
+  ```
+  TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => ({
+        type: 'postgres',
+        host: configService.get('DB_HOST'),
+        port: configService.get('DB_PORT'),
+        username: configService.get('DB_USERNAME'),
+        password: configService.get('DB_PASSWORD'),
+        database: configService.get('DB_DATABASE'),
+        autoLoadEntities: true,
+        synchronize: true,
+      }),
+    }),
   ```
 - Update scripts in `package.json`:
   ```
