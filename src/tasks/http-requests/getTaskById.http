@@ -1,6 +1,8 @@
 # GET => Get task by id
 ### 🟢 Valid🚫
-GET http://localhost:3000/tasks/20898bc9-397e-4149-889f-679eafb9e010
+GET http://localhost:3000/tasks/f07ca66a-ebec-456c-9407-dc96f6dbd2eb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE1MDA1LCJleHAiOjE2NTU0MTg2MDV9.7s5_XWteKkZwmETR7TegfGQp1jXWSeGT0AldovFSPOk
 
 ### 🚫 Invalid
 GET http://localhost:3000/tasks/20898bc9-397e-4149-889f-679eafb9e010
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE1MDA1LCJleHAiOjE2NTU0MTg2MDV9.7s5_XWteKkZwmETR7TegfGQp1jXWSeGT0AldovFSPOy

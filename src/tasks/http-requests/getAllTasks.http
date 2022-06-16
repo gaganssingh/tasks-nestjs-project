@@ -1,9 +1,11 @@
 ### GET => Get All Tasks
 GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE2NTU0MTQ5NDcsImV4cCI6MTY1NTQxODU0N30.bDlDEHp44e-fZdEzOUlYMwyGX5T243exIlzu8FoeabE
 
 
 ### GET => Get All Tasks with filters
-GET http://localhost:3000/tasks?status=IN_PROGRESS&search=milk
+GET http://localhost:3000/tasks?status=OPEN&search=hike
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE0NjA2LCJleHAiOjE2NTU0MTgyMDZ9.1d7AjjOGpQYJ6mEQQjz9JRg4OsElW4w3GToFGBN_xwE
 
 ### GET => Get All Tasks with filters
 GET http://localhost:3000/tasks?status=OPEN

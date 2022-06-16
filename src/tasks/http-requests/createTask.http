@@ -2,16 +2,17 @@
 # 🟢 Valid
 POST http://localhost:3000/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE2NTU0MTIxMTIsImV4cCI6MTY1NTQxNTcxMn0.9O2Pg50veULvkbEZMZAcoCUq1nkDNQKUfTSMSvkiM-Y
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE0NjA2LCJleHAiOjE2NTU0MTgyMDZ9.1d7AjjOGpQYJ6mEQQjz9JRg4OsElW4w3GToFGBN_xwE
 
 {
-  "title": "Go hiking",
-  "description": "Hike in the forest"
+  "title": "Do shopping",
+  "description": "Go to the mall and buy clothes and shoes"
 }
 
 ### 🟢 Valid
 POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE0MjM1LCJleHAiOjE2NTU0MTc4MzV9.CRvpkMjGAexl2u2t1r4BzBYVFX-IEbaRWK2gm7TZo_M
 
 {
   "title": "Testing",
@@ -21,6 +22,7 @@ Content-Type: application/json
 ### 🟢 Valid
 POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE0MjM1LCJleHAiOjE2NTU0MTc4MzV9.CRvpkMjGAexl2u2t1r4BzBYVFX-IEbaRWK2gm7TZo_M
 
 {
   "title": "Clean roon",
