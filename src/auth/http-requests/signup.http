@@ -1,0 +1,41 @@
+### 🟢 Valid
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "username": "test6",
+  "password": "Pa$$word123"
+}
+
+### 🚫 Invalid
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "username": "t",
+  "password": "1234"
+}
+
+### 🚫 Invalid
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "password": "Pa$$word123"
+}
+
+### 🚫 Invalid
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "username": "hjwgew3heikwoj"
+}
+
+### 🚫 Invalid
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  
+}
