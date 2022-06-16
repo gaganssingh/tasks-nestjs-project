@@ -2,6 +2,7 @@
 # 🟢 Valid
 POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE2NTU0MTIxMTIsImV4cCI6MTY1NTQxNTcxMn0.9O2Pg50veULvkbEZMZAcoCUq1nkDNQKUfTSMSvkiM-Y
 
 {
   "title": "Go hiking",
@@ -26,6 +27,15 @@ Content-Type: application/json
   "description": "Completely clean my room"
 }
 
+
+### 🚫 Invalid
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Go hiking",
+  "description": "Hike in the forest"
+}
 
 ### 🚫 Invalid
 POST http://localhost:3000/tasks
