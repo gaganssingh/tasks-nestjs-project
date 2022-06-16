@@ -3,4 +3,11 @@ GET http://localhost:3000/tasks
 
 
 ### GET => Get All Tasks with filters
-GET http://localhost:3000/tasks?status=OPEN&search=milk
+GET http://localhost:3000/tasks?status=IN_PROGRESS&search=milk
+
+### GET => Get All Tasks with filters
+GET http://localhost:3000/tasks?status=OPEN
+
+
+### GET => Get All Tasks with filters
+GET http://localhost:3000/tasks?search=hike
