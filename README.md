@@ -171,9 +171,19 @@ A REST Api built using NestJS, TypeORM and PostgreSQL
     DB_USERNAME: Joi.string().required(),
     DB_PASSWORD: Joi.string().required(),
     DB_DATABASE: Joi.string().required(),
+    JWT_SECRET: Joi.string().required(),
   });
   ```
 
+- Define env variables:
+  ```
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_USERNAME=postgres
+  DB_PASSWORD=dd38c64f-b686-4282-a3c0-97b933a064ef
+  DB_DATABASE=tasks-dev
+  JWT_SECRET=9716da1d-bf67-411a-81d2-c1802f800233
+  ```
 - Import ConfigModule inside `app.module.ts`:
   ```
   @Module({
@@ -212,3 +222,32 @@ A REST Api built using NestJS, TypeORM and PostgreSQL
   "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
   "test": "cross-env STAGE=dev jest",
   ```
+- To use the JWT_SECRET env var:
+  - Replace JwtModule.register() with JwtModule.registerAsync() inside `auth.module.ts`:
+    ```
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => ({
+        secret: configService.get('JWT_SECRET'),
+        signOptions: {
+          expiresIn: 3600, // 1 hour
+        },
+      }),
+    }),
+    ```
+  - Consume the env var inside `jwt.strategy.ts`:
+    ```
+    @Injectable()
+    export class JwtStrategy extends PassportStrategy(Strategy) {
+      constructor(
+        @InjectRepository(User)
+        private userRepository: Repository<User>,
+        private configService: ConfigService,
+      ) {
+        super({
+          secretOrKey: configService.get('JWT_SECRET'),
+          jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+        });
+      }
+    ```
