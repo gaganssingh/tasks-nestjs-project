@@ -12,7 +12,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc
 ### 🟢 Valid
 POST http://localhost:3000/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE0MjM1LCJleHAiOjE2NTU0MTc4MzV9.CRvpkMjGAexl2u2t1r4BzBYVFX-IEbaRWK2gm7TZo_M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjU1NDE2MDE1LCJleHAiOjE2NTU0MTk2MTV9.MEtEUvCZtNepLz6Xves-OF2YOPxh0_MHEqQmvGeHfYo
 
 {
   "title": "Testing",
