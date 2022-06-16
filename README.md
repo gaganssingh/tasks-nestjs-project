@@ -38,7 +38,7 @@ A REST Api built using NestJS, TypeORM and PostgreSQL
     })
     ```
 
-### SETUP - JWT Integration using Passportjs
+### SETUP - JWT Integration using Passportjs:
 
 - Install dependencies: `npm i @nestjs/jwt @nestjs/passport passport passport-jwt @types/passport-jwt`
 - Add passportjs and jwt imports to `auth.module.ts`
@@ -154,4 +154,29 @@ A REST Api built using NestJS, TypeORM and PostgreSQL
   getTasks(@Query() filterDto: GetTasksFilterDto): Promise<Task[]> {
     return this.tasksService.getTasks(filterDto);
   }
+  ```
+
+### SETUP - Environment Variables:
+
+- Install dependencies `npm i @nestjs/config cross-env`
+- Import COnfigModule inside `app.module.ts`:
+  ```
+  @Module({
+    imports: [
+      ConfigModule.forRoot({
+        isGlobal: true,
+        envFilePath: [`.env.stage.${process.env.STAGE}`],
+      }),
+      TypeOrmModule.forRoot({
+      .
+      .
+      .
+  ```
+- Update scripts in `package.json`:
+  ```
+  "start:dev": "cross-env STAGE=dev nest start --watch",
+  "start:debug": "cross-env STAGE=dev nest start --debug --watch",
+  "start:prod": "cross-env STAGE=prod node dist/main",
+  "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+  "test": "cross-env STAGE=dev jest",
   ```
