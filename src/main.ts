@@ -18,7 +18,7 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  const PORT = 3000;
+  const PORT = process.env.PORT;
   await app.listen(PORT);
   logger.log(`Application listening on port ${PORT}`);
 }
