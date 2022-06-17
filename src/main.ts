@@ -8,6 +8,11 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
+  // ENABLE CORS
+  // ⚠️NOT SUITABLE FOR REAL APPS⚠️
+  // ⚠️REAL APPS MUST BE PROVIDES PROPER CORS CONFIGS⚠️
+  app.enableCors();
+
   // Validation Pipe
   app.useGlobalPipes(new ValidationPipe());
 
